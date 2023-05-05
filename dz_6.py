@@ -11,11 +11,22 @@ def zadacha_1():
 #-----------------------------------------------
 # Задача 2. Задан массив из случайных цифр на 15 элементов.На вход подаётся трёхзначное натуральное число. Напишите программу, которая определяет, есть в # массиве последовательность из трёх элементов, совпадающая с введённым числом.
 from random import randint
-list_1 = list([randint(0,10) for i in range(15)])
-print(list_1)
-x = int(input("Введите проверяемое число от: "))
-count = 0
-for i in list_1:
-    if x == i:
-        count+=1
-print(f'В данном массиве число {x} встречается {count} раз')
+def zadacha_3():
+  array = list([randint(0,2) for i in range(15)])
+  array = (''.join(map(str, array)))
+  print(array)
+  nunber = input('Введите трехзначное число:')
+  lenght_number = len(nunber)
+  lenght_array = len(array)
+  count = 0
+  for i in range(lenght_array):
+    if array[i:i+lenght_number] == nunber:
+      count+=1
+  if count > 0:
+    print(f'В массиве  "{array}" ЕСТЬ совпадение из последовательности чисел "{nunber}"')
+    print(f'Колличество совпадений с введенным числом: {count} раз(-а)')
+  else:
+   print(f'В массиве  {array} НЕТ совпадений из последовательности чисел {nunber}') 
+zadacha_3()
+
+
