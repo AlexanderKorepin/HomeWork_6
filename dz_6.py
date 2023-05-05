@@ -12,9 +12,9 @@ def zadacha_1():
 # Задача 2. Задан массив из случайных цифр на 15 элементов.На вход подаётся трёхзначное натуральное число. Напишите программу, которая определяет, есть в # массиве последовательность из трёх элементов, совпадающая с введённым числом.
 from random import randint
 def zadacha_3():
-  array = list([randint(0,2) for i in range(15)])
-  array = (''.join(map(str, array)))
+  array = list([randint(0,100) for i in range(15)])
   print(array)
+  array = (''.join(map(str, array)))
   nunber = input('Введите трехзначное число:')
   lenght_number = len(nunber)
   lenght_array = len(array)
@@ -23,10 +23,10 @@ def zadacha_3():
     if array[i:i+lenght_number] == nunber:
       count+=1
   if count > 0:
-    print(f'В массиве  "{array}" ЕСТЬ совпадение из последовательности чисел "{nunber}"')
+    print(f'В массиве  ЕСТЬ совпадение из последовательности чисел "{nunber}"')
     print(f'Колличество совпадений с введенным числом: {count} раз(-а)')
   else:
-   print(f'В массиве  {array} НЕТ совпадений из последовательности чисел {nunber}') 
+   print(f'В массиве  НЕТ совпадений из последовательности чисел {nunber}') 
 zadacha_3()
-
+#Задача 3. Найдите все простые несократимые дроби, лежащие между 0 и 1, знаменатель которых не превышает 11.
 
